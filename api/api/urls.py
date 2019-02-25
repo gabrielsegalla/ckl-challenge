@@ -18,6 +18,7 @@ from django.urls import path, include
 from rest_framework import routers
 from news.views import NewsViewSet, CategoriesViewSet
 from authentication.views import UsersViewSet
+from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register(r"news", NewsViewSet)
@@ -28,4 +29,5 @@ urlpatterns = [
     path("", include(router.urls)),
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
+    path("api-token-auth/", views.obtain_auth_token, name="api-toke-auth"),
 ]
