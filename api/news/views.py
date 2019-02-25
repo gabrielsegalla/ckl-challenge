@@ -14,7 +14,7 @@ class NewsViewSet(viewsets.ModelViewSet):
 
     def list(self, request, pk=None):
         queryset = News.objects.all()
-        if self.request.user.id:
+        if self.request.user.is_authenticated:
             interests = self.request.user.interests.all()
             id_list = []
             for interest in interests:
@@ -28,6 +28,7 @@ class NewsViewSet(viewsets.ModelViewSet):
             return Response(serializer.data)
 
 
+@permission_classes((AllowAny,))
 class CategoriesViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategoriesSerializer

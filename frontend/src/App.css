@@ -31,3 +31,26 @@
     transform: rotate(360deg);
   }
 }
+
+*{
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar-link {
+  color: #3E433E;
+  font-size: 14px;
+}
+
+.navbar-link:hover {
+  color: #4990E2;
+}
+
+
+.navbar-link-login {
+  margin-left: 54px;
+  color: #4990E2;  
+}
+
+.navbar {
+  border-bottom: solid 1px #979797;
+}

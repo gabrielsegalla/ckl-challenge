@@ -1,46 +1,49 @@
 import React, { Component } from 'react';
 import Card from '../ui/Card';
-import {hashHistory} from 'react-router'
+import { hashHistory } from 'react-router'
 import axios from 'axios'
+import Enviroments from '../enviroments'
 
 export default class Home extends Component {
     state = {
         news: []
     }
 
-    constructor(){
+    constructor() {
         super();
-        let user = localStorage.getItem('user');
-        if (user) {
-            console.log("logado")
-        }else{
-            hashHistory.push('/login')
+        let auth_token = localStorage.getItem('auth_token');
+        if (auth_token) {
+            var config = {
+                headers: { 'Authorization': 'Token ' + auth_token }
+            };
+            axios.get(Enviroments.url + 'news/', config).then(res => {
+                const news = res.data;
+                this.setState({ news });
+            })
+        } else {
+            axios.get(Enviroments.url + 'news/').then(res => {
+                const news = res.data;
+                this.setState({ news });
+            })
         }
-        this.getNews()
-        
-        
+
+
+
     }
 
-    getNews() {
-        axios.get(`http://127.0.0.1:8000/news/`).then(res => {
-            const news = res.data;
-            this.setState({ news });
-        })
-    }
-
-    render(){
+    render() {
         return (
             <div className="container text-center">
                 <div className="row">
-                
+
                     {this.state.news.map((card, index) => {
-                        return(
-                        <Card
-                        title={card.title}
-                        description={card.description}
-                        image_url={card.image_url}/>)
+                        return (
+                            <Card
+                                title={card.title}
+                                description={card.description}
+                                image_url={card.image_url} />)
                     })}
-                  </div>  
+                </div>
             </div>
         );
     }

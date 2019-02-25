@@ -7,9 +7,9 @@ import Home from './container/Home'
 class App extends Component {
   render() {
     return (
-      <div className="container">
-      <Navbar/>
-      {this.props.children}
+      <div>
+        <Navbar />
+        {this.props.children}
       </div>
     );
   }

@@ -159,3 +159,8 @@ dmypy.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+api/authentication/migrations/
+api/news/migrations/
+frontend/node_modules/
