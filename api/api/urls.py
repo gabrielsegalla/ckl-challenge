@@ -23,7 +23,7 @@ from rest_framework.authtoken import views
 router = routers.DefaultRouter()
 router.register(r"news", NewsViewSet)
 router.register(r"categories", CategoriesViewSet)
-router.register(r"users", UsersViewSet)
+# router.register(r"users", UsersViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),

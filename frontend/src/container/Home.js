@@ -33,18 +33,23 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div className="container text-center">
-                <div className="row">
-
-                    {this.state.news.map((card, index) => {
-                        return (
+            <div class="container">
+                {this.state.news.map((card, index) => {
+                    return (
+                        <div className="item">
                             <Card
+                                order={card.id}
                                 title={card.title}
                                 description={card.description}
-                                image_url={card.image_url} />)
-                    })}
-                </div>
+                                image_url={card.image_url}
+                                author={card.author}
+                                category_name={card.category_name}
+                                category_hex_color={card.category_hex_color} />
+                        </div>
+                    )
+                })}
             </div>
+
         );
     }
 

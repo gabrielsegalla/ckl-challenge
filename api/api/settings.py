@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "news",
     "authentication",
     "rest_framework",
-    "rest_framework.authtoken",
+    # "rest_framework.authtoken",
     "corsheaders",
 ]
 
@@ -123,14 +123,14 @@ STATIC_URL = "/static/"
 
 # Custom USER settings/ API Authentication
 
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.BasicAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
-    ),
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
-}
+# REST_FRAMEWORK = {
+#     "DEFAULT_AUTHENTICATION_CLASSES": (
+#         "rest_framework.authentication.SessionAuthentication",
+#         "rest_framework.authentication.BasicAuthentication",
+#         "rest_framework.authentication.SessionAuthentication",
+#     ),
+#     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+# }
 
 AUTH_USER_MODEL = "authentication.User"
 

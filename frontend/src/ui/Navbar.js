@@ -25,19 +25,27 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-light bg-light">
-        <Link to='/' className="navbar-brand" style={{ marginLeft: '131px' }}>
-          <img src={logo} width="45" height="45" alt="" />
-        </Link>
-        <form className="form-inline" style={{ marginRight: '139px' }}>
-          {this.state.categories.map((category, index) => {
-            return (
-              <Link to='/' className="nav-link navbar-link">{category.name}</Link>
-            )
-          })}
-          <Link to='/login' className="nav-link navbar-link navbar-link-login" >LOGIN</Link>
-        </form>
-      </nav>
+      <nav className="navbar-expand-lg navbar navbar-light bg-light">
+        <div class="container">
+          <Link to='/' className="navbar-brand" >
+            <img src={logo} width="45" height="45" alt="" />
+          </Link>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+              {this.state.categories.map((category) => {
+                return (
+                  <Link to='/' className="nav-item nav-link navbar-link dropdown-item">{category.name}</Link>
+                )
+              })}
+              <Link to='/login' className="nav-item nav-link navbar-link navbar-link-login" >LOGIN</Link>
+            </ul>
+          </div>
+        </div>
+
+      </nav >
     );
   }
 }
