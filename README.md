@@ -30,8 +30,8 @@ This project is a full stack project using React to frontend and Python with Dja
 # How to run Frontend
 
 **Requirements:**
- - Python 3.x
- - Virtual Environment 
+ - NPM
+ - Node
 
 *1º - Go to frontend folder*
 
