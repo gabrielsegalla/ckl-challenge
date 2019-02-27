@@ -11,11 +11,13 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from os import path
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PROJECT_PATH = os.path.abspath(os.path.join(os.path.split(__file__)[0], ".."))
+path = lambda *args: os.path.join(PROJECT_PATH, *args)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -24,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "n7wrg_inm6y^z+-n8iqky)#xb0$lm9fwn$9%%3yxag_gfwd&_5"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -145,10 +147,11 @@ STATIC_ROOT = "static/"
 
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = (
-    # use env/lib/python3.5/site-packages/django/contrib/admin/static/ in development
-    path("app/.heroku/python/lib/python3.6/dist-packages/django/contrib/admin/static"),
-)
+# STATICFILES_DIRS = (
+#     # use env/lib/python3.5/site-packages/django/contrib/admin/static/ in development
+#     path("env/lib/python3.5/site-packages/django/contrib/admin/static/"),
+#     # path("app/.heroku/python/lib/python3.6/dist-packages/django/contrib/admin/static/"),
+# )
 
 MEDIA_ROOT = "media/"
 
