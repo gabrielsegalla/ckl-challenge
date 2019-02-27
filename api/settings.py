@@ -155,4 +155,12 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 
-DATABASES = {"default": {"ENGINE": "django.db.backends.postgresql_psycopg2"}}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "dep2tjujtcms16",
+        "USER": "jkexangajvftgj",
+        "PASSWORD": "82212a72fdfdd99e8dda50cb77019edb0b5da67e02efdb0284a99c4178f03710",
+        "HOST": "ec2-54-235-134-25.compute-1.amazonaws.com",
+    }
+}
