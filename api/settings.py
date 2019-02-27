@@ -143,9 +143,11 @@ CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_ROOT = "static/"
 
+STATIC_ROOT = "static"  # Important for Heroku
 STATIC_URL = "/static/"
+
+STATICFILES_DIRS = (path.join(BASE_DIR, "static"),)  # Important for Heroku
 
 # STATICFILES_DIRS = (
 #     # use env/lib/python3.5/site-packages/django/contrib/admin/static/ in development
