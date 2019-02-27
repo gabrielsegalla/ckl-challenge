@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Card from '../ui/Card';
-import { hashHistory } from 'react-router'
 import axios from 'axios'
 import Enviroments from '../enviroments'
 
@@ -33,12 +32,13 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div class="container">
+            <div class="container" style={{marginTop: '80px'}}>
                 {this.state.news.map((card, index) => {
+                    index = index + 1
                     return (
                         <div className="item">
                             <Card
-                                order={card.id}
+                                order={index}
                                 title={card.title}
                                 description={card.description}
                                 image_url={card.image_url}
@@ -46,7 +46,7 @@ export default class Home extends Component {
                                 category_name={card.category_name}
                                 category_hex_color={card.category_hex_color} />
                         </div>
-                    )
+                        )
                 })}
             </div>
 

@@ -4,6 +4,7 @@ import axios from 'axios'
 import logo from '../assets/logo.png'
 import Enviroments from '../enviroments'
 
+
 class Navbar extends Component {
   state = {
     categories: []
@@ -25,7 +26,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar-expand-lg navbar navbar-light bg-light">
+      <nav className="navbar-expand-lg navbar navbar-light" >
         <div class="container">
           <Link to='/' className="navbar-brand" >
             <img src={logo} width="45" height="45" alt="" />
@@ -40,7 +41,7 @@ class Navbar extends Component {
                   <Link to='/' className="nav-item nav-link navbar-link dropdown-item">{category.name}</Link>
                 )
               })}
-              <Link to='/login' className="nav-item nav-link navbar-link navbar-link-login" >LOGIN</Link>
+              <Link to='/login' className="nav-item nav-link navbar-link navbar-link-login login-link" >LOGIN</Link>
             </ul>
           </div>
         </div>

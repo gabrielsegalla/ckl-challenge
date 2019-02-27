@@ -20,6 +20,8 @@ This project is a full stack project using React to frontend and Python with Dja
 
 *3º - Run migrate command*
 
+    $ (env) python manange.py migrate
+    $ (env) python manage.py makemigrations news
     $ (env) python manange.py migrate	
 
 *4º - Run the project*

@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
+import React  from 'react';
 
 
 function chooseCard(props) {
-    if (props.order == 1) {
+    if (props.order === 1) {
         return <div>
+            
             <div className="category-container">
                 <p className="category" style={{ color: props.category_hex_color }}>{props.category_name}</p>
             </div>
             <div className="first-item-image-container">
-                <img src={props.image_url} className="card-img-top" alt="..." />
+                <div class="image">
+                    <img src={props.image_url} className="card-img-top" alt="..." />
+                    <div className="image-overlay"></div>
+                    <button className="image-btn">Read More</button>
+                </div>
             </div>
             <div className="first-item-title-container">
                 <h5 className="first-item-title">{props.title}</h5>
@@ -19,13 +24,17 @@ function chooseCard(props) {
                 <p className="item-avatar-name">by {props.author}</p>
             </div>
         </div>;
-    } else if (props.order == 2 || props.order == 3) {
+    } else if (props.order === 2 || props.order === 3) {
         return <div>
             <div className="category-container">
                 <p className="category" style={{ color: props.category_hex_color }}>{props.category_name}</p>
             </div>
             <div className="item-image-container">
-                <img src={props.image_url} className="item-image" alt="..." />
+                <div class="image">
+                        <img src={props.image_url} className="card-img-top" alt="..." />
+                        <div className="image-overlay"></div>
+                        <button className="image-btn">Read More</button>
+                    </div>
             </div>
             <div className="item-title-container">
                 <h5 className="item-title">{props.title}</h5>
@@ -39,7 +48,7 @@ function chooseCard(props) {
             </div>
         </div>;
     } else {
-        return <div>
+        return <div className="item-last-row">
             <div className="category-container">
                 <p className="category" style={{ color: props.category_hex_color }}>{props.category_name}</p>
             </div>

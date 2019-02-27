@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from news.views import NewsViewSet, CategoriesViewSet
-from authentication.views import UsersViewSet
+#from authentication.views import UsersViewSet
 from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
