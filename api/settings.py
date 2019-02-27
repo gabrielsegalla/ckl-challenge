@@ -132,8 +132,16 @@ STATIC_URL = "/static/"
 #     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
 # }
 
-#AUTH_USER_MODEL = "authentication.User"
+# AUTH_USER_MODEL = "authentication.User"
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = "/static/"
+STATIC_DIRS = "static"
+STATICFILES_DIR = [STATIC_DIRS]
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
