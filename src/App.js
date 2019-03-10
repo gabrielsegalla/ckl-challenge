@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Navbar from './ui/Navbar'
 
 class App extends Component {
@@ -7,9 +6,8 @@ class App extends Component {
     return (
       <div >
         <Navbar />
-        <div className="container">
-        {this.props.children}
-
+        <div>
+          {this.props.children}
         </div>
       </div>
     );
@@ -17,3 +15,4 @@ class App extends Component {
 }
 
 export default App;
+ 

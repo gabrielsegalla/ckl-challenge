@@ -2,37 +2,36 @@ import React, { Component } from 'react';
 import Card from '../ui/Card';
 import axios from 'axios'
 import Enviroments from '../enviroments'
+import '../assets/css/home.css';
 
 export default class Home extends Component {
     state = {
         news: []
     }
-
+    isLoading = true;
+    
     constructor() {
         super();
-        let auth_token = localStorage.getItem('auth_token');
-        if (auth_token) {
-            var config = {
-                headers: { 'Authorization': 'Token ' + auth_token }
-            };
-            axios.get(Enviroments.url + 'news/', config).then(res => {
-                const news = res.data;
-                this.setState({ news });
-            })
-        } else {
-            axios.get(Enviroments.url + 'news/').then(res => {
-                const news = res.data;
-                this.setState({ news });
-            })
-        }
+        this.getNews();
+        
+    }
 
-
-
+    getNews(){
+        axios.get(Enviroments.url + 'news/').then(res => {
+            const news = res.data;
+            this.isLoading = false;
+            this.setState({ news });
+        })
     }
 
     render() {
         return (
-            <div class="container" style={{marginTop: '80px'}}>
+            <div className="container home-container" style={{marginTop: '77.33px'}}>
+                { this.isLoading && <div className="text-center loading-div">
+                    <div className="spinner-border" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </div>
+                </div> }
                 {this.state.news.map((card, index) => {
                     index = index + 1
                     return (
@@ -42,9 +41,10 @@ export default class Home extends Component {
                                 title={card.title}
                                 description={card.description}
                                 image_url={card.image_url}
-                                author={card.author}
-                                category_name={card.category_name}
-                                category_hex_color={card.category_hex_color} />
+                                author={card.author.name}
+                                author_image={card.author.image_url}
+                                category_name={card.category.name}
+                                category_hex_color={card.category.hex_color} />
                         </div>
                         )
                 })}
@@ -52,5 +52,4 @@ export default class Home extends Component {
 
         );
     }
-
 }

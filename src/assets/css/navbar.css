@@ -1,0 +1,99 @@
+
+.navbar-link:hover {
+  color: #4990E2;
+}
+
+.nav-item{
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #3E433E;
+}
+
+.navbar-link-login {
+  color: #4990E2;  
+}
+
+.navbar {
+  border-bottom: solid 1px #979797;
+}
+
+.navbar-toggler {
+  border-color: transparent !important;
+  position: absolute;
+  top: 15px;
+  outline: none;
+}
+
+.navbar{
+  height: 56px;
+  padding: 0;
+}
+
+.dropdown-item.active, .dropdown-item:active{
+  background-color: transparent;
+  color: #2f2727 !important;
+}
+.login-link {
+  font-weight: bold;
+  color: #4990E2 !important;
+  margin-left: 30px;
+}
+
+.navbar-container {
+  margin-left: 115px;
+  margin-right: 115px;
+}
+
+
+@media screen and (max-width: 750px) {
+  .navbar-container {
+      padding-left: 52px !important;
+      padding-right: 52px !important;
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .login-link {
+    margin-left: 0px;
+  }
+  .navbar-brand {
+    margin: 0 auto;
+    display: table;
+    margin-right: auto !important;
+  }
+  .navbar-collapse{
+    opacity: 0;
+    -webkit-transition: opacity 0.5s; /* Safari */
+    transition: opacity 0.5s;
+  }
+  .navbar-pages-list {
+    padding: 24px 31px 7px 31px;
+  }
+}
+
+.navbar-toggler {
+  position: absolute;
+  top: 0;
+  line-height: 41px;
+  outline: none !important;
+}
+
+.show {
+  opacity: 1;
+  background-color: white;
+  height: 100vh;
+  z-index: 1;
+  border-top: solid 1px #979797;
+}
+
+@media screen and (max-width: 320px) {
+  .navbar-container {
+    padding-left: 27px !important;
+    padding-right: 27px !important;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}

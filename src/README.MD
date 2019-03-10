@@ -19,4 +19,4 @@ We suggest that you begin by typing:
   cd news_website_frontend
   npm start
 
-Happy hacking!
+Happy hacking! 
